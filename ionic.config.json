@@ -1,0 +1,7 @@
+{
+  "name": "starwars",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
