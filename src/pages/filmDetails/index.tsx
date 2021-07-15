@@ -12,6 +12,8 @@ import React, { useCallback, useContext, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { FilmContext } from "../../components/context/FilmDetail";
 
+import { Card, CardContent } from "./styles";
+
 const FilmDetails: React.FC = () => {
   const history = useHistory();
   const { id } = useParams<{ id: string }>();
@@ -38,8 +40,12 @@ const FilmDetails: React.FC = () => {
           <IonTitle>Film: {data.title}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>{data.opening_crawl}</IonContent>
-      <IonButton color="secondary" onClick={() => navigate("/planets")}>
+      <IonContent>
+        <Card>
+          <CardContent>{data.opening_crawl}</CardContent>
+        </Card>
+      </IonContent>
+      <IonButton color="primary" routerLink="/planets">
         Planets
       </IonButton>
       <IonButton color="secondary" onClick={() => navigate("/people")}>
